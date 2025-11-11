@@ -28,6 +28,7 @@ def balance_rfm_core(
     opp_to_rotation: bool = False,
 ) -> Dict[str, Any]:
     """Python port of MATLAB balance_rfm_core."""
+    opp_to_rotation= not opp_to_rotation  # Invert logic to match MATLAB version
     if R0.shape != R1.shape or R0.shape != R2.shape:
         raise ValueError("R0, R1, R2 must have the same shape (M x 2)")
     if R0.shape[1] != 2:
